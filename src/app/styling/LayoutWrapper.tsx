@@ -1,9 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useContext } from "react";
 import styled, { ThemeProvider } from "styled-components";
 import { GlobalStyles } from "@/app/styling/GlobalStyles";
 import { lightTheme, darkTheme } from "@/app/styling/themes";
+import { BaseContext } from "@/context/BaseContext";
 
 interface UnstyledLayoutWrapperProps {
   className?: string;
@@ -13,10 +14,7 @@ const UnstyledLayoutWrapper = ({
   className,
   children,
 }: UnstyledLayoutWrapperProps) => {
-  const [theme, setTheme] = useState("light");
-  const themeToggler = () => {
-    theme === "light" ? setTheme("dark") : setTheme("light");
-  };
+  const { theme } = useContext(BaseContext);
   return (
     <div className={className}>
       <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
@@ -29,7 +27,8 @@ const UnstyledLayoutWrapper = ({
 
 const LayoutWrapper = styled(UnstyledLayoutWrapper)`
   --border-color: ${(props) => props.theme.border};
-  background: red;
+  width: 700px;
+  margin: 0 auto;
 `;
 
 export default LayoutWrapper;

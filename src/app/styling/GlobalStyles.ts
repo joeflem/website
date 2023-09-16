@@ -9,6 +9,6 @@ export const GlobalStyles = createGlobalStyle`
       theme.border} 0.5px, transparent 0.5px),
       linear-gradient(to right, ${({ theme }) =>
         theme.border} 0.5px, transparent 0.5px);
-    background-size: 80px 80px;
+    background-size: 100px 100px;
   }
   `;

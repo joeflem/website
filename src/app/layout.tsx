@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import LayoutWrapper from "./styling/LayoutWrapper";
+import Header from "@/app/UI/Header";
+import BaseContext from "@/context/BaseContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -13,7 +15,12 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <LayoutWrapper>{children} </LayoutWrapper>
+        <BaseContext>
+          <LayoutWrapper>
+            <Header />
+            {children}
+          </LayoutWrapper>
+        </BaseContext>
       </body>
     </html>
   );

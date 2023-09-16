@@ -1,12 +1,16 @@
 export const lightTheme = {
+  name: "light",
+  primaryColor: "#007bff",
   body: "#FFF",
   text: "#363537",
   background: "#363537",
-  border: "red",
+  border: "rgba(0, 0, 0, 0.07)",
 };
 export const darkTheme = {
-  body: "#363537",
+  name: "dark",
+  primaryColor: "#007bff",
+  body: "#000",
   text: "#FAFAFA",
-  background: "#999",
-  border: "green",
+  background: "#000",
+  border: "rgba(255, 255, 255, 0.07)",
 };

@@ -33,6 +33,7 @@ const Nav = styled(UnstyledNav)`
         padding: 0 10px;
         opacity: 0.75;
         transition: 0.25s ease;
+        text-decoration: none;
         &:hover {
           color: ${(props) => props.theme.primaryColor};
           opacity: 1;

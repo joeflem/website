@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
 
 interface BaseContextValueType {
   theme: "light" | "dark";
@@ -18,9 +18,18 @@ interface BaseContextProviderProps {
 
 const BaseContextProvider = ({ children }: BaseContextProviderProps) => {
   const [theme, setTheme] = useState<"light" | "dark">("light");
+
   const toggleTheme = () => {
     setTheme(theme === "light" ? "dark" : "light");
+    localStorage.setItem("theme", theme === "light" ? "dark" : "light");
   };
+
+  useEffect(() => {
+    const localTheme = localStorage.getItem("theme");
+    if (localTheme) {
+      setTheme(localTheme as "light" | "dark");
+    }
+  }, []);
 
   return (
     <BaseContext.Provider value={{ theme, toggleTheme }}>

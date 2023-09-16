@@ -25,7 +25,7 @@ const Header = styled(UnstyledHeader)`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  a {
+  > a {
     color: ${(props) => props.theme.text};
     text-decoration: none;
   }

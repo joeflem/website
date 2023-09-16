@@ -14,6 +14,9 @@ export const GlobalStyles = createGlobalStyle`
     p{
       line-height: 2;
       font-weight: 300;
+      a{
+        color: ${({ theme }) => theme.primaryColor} !important;
+      }
     }
   }
   `;

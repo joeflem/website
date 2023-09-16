@@ -1,5 +1,7 @@
 import Image from "next/image";
 import { GradientWelcome } from "./UI/GradientWelcome";
+import Link from "next/link";
+import CardScroller from "./UI/CardScroller";
 
 export default function Page() {
   return (
@@ -16,23 +18,21 @@ export default function Page() {
         👋 Hello. I'm Joe.
       </GradientWelcome>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-        fermentum tellus magna, id consequat magna rutrum sit amet. Maecenas
-        suscipit a elit quis dapibus. Duis tincidunt iaculis nisl interdum
-        condimentum. Proin mollis massa eu congue aliquam. Vestibulum accumsan
-        orci vel mi fringilla, at pretium lacus mattis. Integer eget commodo ex.
-        Quisque pellentesque, massa quis tempus ullamcorper, lorem augue blandit
-        leo, eget volutpat nulla ante vitae nulla. Suspendisse efficitur lectus
-        ut finibus maximus. Nunc id consequat risus. Nam varius lectus a nisi
-        aliquam cursus. Maecenas cursus porta nisl id viverra.
+        I'm a lead frontend developer with a passion for building great teams,
+        great products, and great user experiences.
       </p>
       <p>
-        Sed augue mi, pretium in leo et, tincidunt mollis justo. Aenean
-        pellentesque a erat finibus maximus. Suspendisse dignissim, orci id
-        sollicitudin fermentum, libero massa efficitur mi, ac pellentesque arcu
-        lacus in urna. Proin tempus purus sit amet dolor posuere viverra.
-        Vivamus commodo posuere feugiat.
+        I've spent the last 8 years building a variety of web applications
+        ranging from small Wordpress projects to large scale React applications.
+        I've worked with a variety of technologies including React, Vue,
+        Next.js, Angular, Laravel and Wordpress.
       </p>
+      <p>
+        I'm currently working as a Tech Lead at{" "}
+        <Link href="https://huler.io">Huler</Link> where our team is building
+        and maintaining a set of React applications for our SaaS product.
+      </p>
+      <CardScroller />
     </main>
   );
 }

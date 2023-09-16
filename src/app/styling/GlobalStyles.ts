@@ -10,5 +10,10 @@ export const GlobalStyles = createGlobalStyle`
       linear-gradient(to right, ${({ theme }) =>
         theme.border} 0.5px, transparent 0.5px);
     background-size: 100px 100px;
+
+    p{
+      line-height: 2;
+      font-weight: 300;
+    }
   }
   `;

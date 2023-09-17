@@ -20,7 +20,7 @@ const ScrollingContainer = styled.div<ScrollingContainerProps>`
   position: absolute;
   left: 0;
   padding: 20px 0 20px ${(props) => props.$leftPosition}px;
-  width: calc(100% - ${(props) => props.leftPosition}px);
+  width: calc(100% - ${(props) => props.$leftPosition}px);
   cursor: grab;
   & > div > div > * {
     margin: 20px;

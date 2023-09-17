@@ -35,6 +35,11 @@ const LayoutWrapper = styled(UnstyledLayoutWrapper)`
   > main {
     flex-grow: 1;
   }
+  @media (max-width: 750px) {
+    width: 100%;
+    padding: 0 30px;
+    box-sizing: border-box;
+  }
 `;
 
 export default LayoutWrapper;

@@ -4,6 +4,7 @@ import LayoutWrapper from "./styling/LayoutWrapper";
 import Header from "@/app/UI/Header";
 import BaseContext from "@/context/BaseContext";
 import Footer from "./UI/Footer";
+import StyledComponentsRegistry from "../lib/registry";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,11 +18,13 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
     <html lang="en">
       <body className={inter.className}>
         <BaseContext>
-          <LayoutWrapper>
-            <Header />
-            <main>{children}</main>
-            <Footer />
-          </LayoutWrapper>
+          <StyledComponentsRegistry>
+            <LayoutWrapper>
+              <Header />
+              <main>{children}</main>
+              <Footer />
+            </LayoutWrapper>
+          </StyledComponentsRegistry>
         </BaseContext>
       </body>
     </html>

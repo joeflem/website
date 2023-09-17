@@ -35,7 +35,7 @@ interface UnstyledCardScrollerProps {
 }
 
 const UnstyledCardScroller = ({ className }: UnstyledCardScrollerProps) => {
-  const [leftPosition, setLeftPosition] = useState(0);
+  const [leftPosition, setLeftPosition] = useState(300);
 
   const ref = useRef<HTMLDivElement>(null);
   const scrollingContainerRef = useRef<HTMLDivElement>(null);
@@ -57,8 +57,9 @@ const UnstyledCardScroller = ({ className }: UnstyledCardScrollerProps) => {
       className={className}
       ref={ref}
       style={{
-        paddingBottom:
-          scrollingContainerRef?.current?.getBoundingClientRect().height,
+        paddingBottom: scrollingContainerRef?.current
+          ? scrollingContainerRef?.current?.getBoundingClientRect().height
+          : 300,
       }}
     >
       <ScrollingContainer
@@ -103,6 +104,16 @@ const UnstyledCardScroller = ({ className }: UnstyledCardScrollerProps) => {
 
 const CardScroller = styled(UnstyledCardScroller)`
   margin: 0 -20px;
+  opacity: 0;
+  animation: fadeIn 0.5s 0.5s forwards;
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
 `;
 
 export default CardScroller;

@@ -29,15 +29,25 @@ export default function Page() {
       </p>
       <p>
         I&apos;m currently working as a Tech Lead at{" "}
-        <Link href="https://huler.io">Huler</Link> where our team is building
-        and maintaining a set of React applications for our SaaS product.
+        <Link href="https://huler.io" target="_blank">
+          Huler
+        </Link>{" "}
+        where our team is building and maintaining a set of React applications
+        for our SaaS product.
       </p>
       <p>
         You can find me on{" "}
-        <Link href="https://www.linkedin.com/in/joe-c-4646a7107/">
+        <Link
+          href="https://www.linkedin.com/in/joe-c-4646a7107/"
+          target="_blank"
+        >
           LinkedIn
         </Link>{" "}
-        and <Link href="https://github.com/ciavuc">GitHub</Link>
+        and{" "}
+        <Link href="https://github.com/ciavuc" target="_blank">
+          GitHub
+        </Link>
+        .
       </p>
       <CardScroller />
     </main>

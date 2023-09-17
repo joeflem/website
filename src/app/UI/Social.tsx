@@ -18,7 +18,7 @@ const UnstyledSocial = ({ className }: UnstyledSocialProps) => {
     <nav className={className}>
       <ul>
         <li>
-          <Link href="https://github.com/ciavuc">
+          <Link href="https://github.com/ciavuc" target="_blank">
             <Image
               alt="GitHub"
               src={theme.name === "dark" ? githubwhite : github}
@@ -26,7 +26,10 @@ const UnstyledSocial = ({ className }: UnstyledSocialProps) => {
               height="22"
             />
           </Link>
-          <Link href="https://www.linkedin.com/in/joe-fleming-3b1b5a1a8/">
+          <Link
+            href="https://www.linkedin.com/in/joe-fleming-3b1b5a1a8/"
+            target="_blank"
+          >
             <Image
               alt="LinkedIn"
               src={theme.name === "dark" ? linkedinwhite : linkedin}

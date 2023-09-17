@@ -11,11 +11,10 @@ interface UnstyledHeaderProps {
 
 const UnstyledHeader = ({ className }: UnstyledHeaderProps) => {
   return (
-    <div className={className}>
+    <header className={className}>
       <Link href="/">@joefleming</Link>
-      <Nav />
       <ModeSwitcher />
-    </div>
+    </header>
   );
 };
 

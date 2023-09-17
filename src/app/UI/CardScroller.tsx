@@ -21,6 +21,7 @@ const ScrollingContainer = styled.div<ScrollingContainerProps>`
   left: 0;
   padding: 20px 0 20px ${(props) => props.leftPosition}px;
   width: calc(100% - ${(props) => props.leftPosition}px);
+  cursor: grab;
   & > div > div > * {
     margin: 20px;
   }
@@ -30,17 +31,14 @@ const ScrollingContainer = styled.div<ScrollingContainerProps>`
 `;
 
 interface UnstyledCardScrollerProps {
-  children: ReactNode;
   className?: string;
 }
 
-const UnstyledCardScroller = ({
-  className,
-  children,
-}: UnstyledCardScrollerProps) => {
+const UnstyledCardScroller = ({ className }: UnstyledCardScrollerProps) => {
   const [leftPosition, setLeftPosition] = useState(0);
 
   const ref = useRef<HTMLDivElement>(null);
+  const scrollingContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const getLeftPosFromRef = () => {
@@ -55,8 +53,18 @@ const UnstyledCardScroller = ({
   }, []);
 
   return (
-    <div className={className} ref={ref}>
-      <ScrollingContainer leftPosition={leftPosition}>
+    <div
+      className={className}
+      ref={ref}
+      style={{
+        paddingBottom:
+          scrollingContainerRef?.current?.getBoundingClientRect().height,
+      }}
+    >
+      <ScrollingContainer
+        leftPosition={leftPosition}
+        ref={scrollingContainerRef}
+      >
         <ScrollingCarousel>
           <Card
             title="Huler"

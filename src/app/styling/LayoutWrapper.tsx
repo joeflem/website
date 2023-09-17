@@ -29,6 +29,12 @@ const LayoutWrapper = styled(UnstyledLayoutWrapper)`
   --border-color: ${(props) => props.theme.border};
   width: 700px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  > main {
+    flex-grow: 1;
+  }
 `;
 
 export default LayoutWrapper;

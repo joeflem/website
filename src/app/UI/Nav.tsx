@@ -13,8 +13,9 @@ const UnstyledNav = ({ className }: UnstyledNavProps) => {
       <ul>
         <li>
           <Link href="/">Info</Link>
+        </li>
+        <li>
           <Link href="/contact">Contact</Link>
-          <Link href="https://github.com/ciavuc">Github</Link>
         </li>
       </ul>
     </nav>

@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import LayoutWrapper from "./styling/LayoutWrapper";
 import Header from "@/app/UI/Header";
 import BaseContext from "@/context/BaseContext";
+import Footer from "./UI/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,7 +19,8 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
         <BaseContext>
           <LayoutWrapper>
             <Header />
-            {children}
+            <main>{children}</main>
+            <Footer />
           </LayoutWrapper>
         </BaseContext>
       </body>

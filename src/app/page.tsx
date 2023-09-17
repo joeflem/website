@@ -15,22 +15,29 @@ export default function Page() {
             height="60"
           />
         </figure>
-        👋 Hello. I'm Joe.
+        👋 Hello. I&apos;m Joe.
       </GradientWelcome>
       <p>
-        I'm a lead frontend developer with a passion for building great teams,
-        great products, and great user experiences.
+        I&apos;m a lead frontend developer with a passion for building great
+        teams, great products, and great user experiences.
       </p>
       <p>
-        I've spent the last 8 years building a variety of web applications
+        I&apos;ve spent the last 8 years building a variety of web applications
         ranging from small Wordpress projects to large scale React applications.
-        I've worked with a variety of technologies including React, Vue,
+        I&apos;ve worked with a variety of technologies including React, Vue,
         Next.js, Angular, Laravel and Wordpress.
       </p>
       <p>
-        I'm currently working as a Tech Lead at{" "}
+        I&apos;m currently working as a Tech Lead at{" "}
         <Link href="https://huler.io">Huler</Link> where our team is building
         and maintaining a set of React applications for our SaaS product.
+      </p>
+      <p>
+        You can find me on{" "}
+        <Link href="https://www.linkedin.com/in/joe-c-4646a7107/">
+          LinkedIn
+        </Link>{" "}
+        and <Link href="https://github.com/ciavuc">GitHub</Link>
       </p>
       <CardScroller />
     </main>

@@ -70,7 +70,7 @@ const Card = styled(UnstyledCard)<CardProps>`
     background-size: 400%;
     animation: bganimation 15s infinite;
     border-radius: 13px;
-    box-shadow: 0 0 #0000, 0 0 #0000, ${(props) => props.theme.shadow};
+    box-shadow: 0 0 #0000, 0 0 #0000, ${props.theme.shadow};
   }`}
 `;
 

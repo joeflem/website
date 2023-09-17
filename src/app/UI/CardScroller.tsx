@@ -10,7 +10,7 @@ import harrisoncarloss from "/public/img/harrisoncarloss.png";
 import huler from "/public/img/huler.png";
 
 interface ScrollingContainerProps {
-  leftPosition: number;
+  $leftPosition: number;
   children: ReactNode;
 }
 
@@ -19,7 +19,7 @@ const ScrollingContainer = styled.div<ScrollingContainerProps>`
   flex-wrap: nowrap;
   position: absolute;
   left: 0;
-  padding: 20px 0 20px ${(props) => props.leftPosition}px;
+  padding: 20px 0 20px ${(props) => props.$leftPosition}px;
   width: calc(100% - ${(props) => props.leftPosition}px);
   cursor: grab;
   & > div > div > * {
@@ -62,7 +62,7 @@ const UnstyledCardScroller = ({ className }: UnstyledCardScrollerProps) => {
       }}
     >
       <ScrollingContainer
-        leftPosition={leftPosition}
+        $leftPosition={leftPosition}
         ref={scrollingContainerRef}
       >
         <ScrollingCarousel>

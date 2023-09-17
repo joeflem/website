@@ -15,7 +15,7 @@ export default function Page() {
             height="60"
           />
         </figure>
-        👋 Hello. I&apos;m Joe.
+        👋 Hello, I&apos;m Joe.
       </GradientWelcome>
       <p>
         I&apos;m a lead frontend developer with a passion for building great

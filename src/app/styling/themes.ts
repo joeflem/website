@@ -16,7 +16,7 @@ export const darkTheme = {
   body: "#000",
   text: "#FAFAFA",
   background: "#000",
-  border: "rgba(255, 255, 255, 0.07)",
+  border: "rgba(255, 255, 255, 0.08)",
   contrast: "#000",
   shadow:
     "0px 0px 15px 0px rgba(0,0,0,.06),0px 2px 30px 0px rgba(0,0,0,.22),inset 0px 0px 1px 0px hsla(0,0%,100%,.15)",

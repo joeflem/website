@@ -18,8 +18,8 @@ export default function Page() {
         👋 Hello, I&apos;m Joe.
       </GradientWelcome>
       <p>
-        I&apos;m a lead frontend developer with a passion for building great
-        teams, great products, and great user experiences.
+        I&apos;m a frontend developer with a passion for building great teams,
+        great products, and great user experiences.
       </p>
       <p>
         I&apos;ve spent the last 8 years building a variety of web applications

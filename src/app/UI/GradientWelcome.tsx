@@ -18,6 +18,10 @@ export const GradientWelcome = styled.h1`
   animation: bganimation 15s infinite;
   color: #fff;
   position: relative;
+  font-size: 32px;
+  @media (max-width: 400px) {
+    font-size: 28px;
+  }
   figure {
     position: absolute;
     width: 60px;

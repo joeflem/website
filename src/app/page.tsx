@@ -34,7 +34,7 @@ export default function Page() {
           LinkedIn
         </Link>{" "}
         and{" "}
-        <Link href="https://github.com/ciavuc" target="_blank">
+        <Link href="https://github.com/joeflem" target="_blank">
           GitHub
         </Link>
         .

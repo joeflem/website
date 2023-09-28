@@ -18,7 +18,7 @@ const UnstyledSocial = ({ className }: UnstyledSocialProps) => {
     <nav className={className}>
       <ul>
         <li>
-          <Link href="https://github.com/ciavuc" target="_blank">
+          <Link href="https://github.com/joeflem" target="_blank">
             <Image
               alt="GitHub"
               src={theme.name === "dark" ? githubwhite : github}

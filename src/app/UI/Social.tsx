@@ -27,7 +27,7 @@ const UnstyledSocial = ({ className }: UnstyledSocialProps) => {
             />
           </Link>
           <Link
-            href="https://www.linkedin.com/in/joe-fleming-3b1b5a1a8/"
+            href="https://www.linkedin.com/in/joe-c-4646a7107/"
             target="_blank"
           >
             <Image

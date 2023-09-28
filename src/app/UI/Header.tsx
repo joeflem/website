@@ -4,6 +4,7 @@ import Link from "next/link";
 import styled from "styled-components";
 import Nav from "@/app/UI/Nav";
 import ModeSwitcher from "./ModeSwitcher";
+import ProfilePic from "./ProfilePic";
 
 interface UnstyledHeaderProps {
   className?: string;
@@ -12,7 +13,10 @@ interface UnstyledHeaderProps {
 const UnstyledHeader = ({ className }: UnstyledHeaderProps) => {
   return (
     <header className={className}>
-      <Link href="/">@joefleming</Link>
+      <Link href="/">
+        <ProfilePic />
+        @joefleming
+      </Link>
       <ModeSwitcher />
     </header>
   );
@@ -27,6 +31,18 @@ const Header = styled(UnstyledHeader)`
   > a {
     color: ${(props) => props.theme.text};
     text-decoration: none;
+    display: flex;
+    align-items: center;
+    &:hover {
+      > figure {
+        transform: scale(1.05);
+      }
+    }
+    &:active {
+      > figure {
+        transform: scale(0.95);
+      }
+    }
   }
 `;
 

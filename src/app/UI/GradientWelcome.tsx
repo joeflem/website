@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export const GradientWelcome = styled.h1`
   margin: 40px 0 30px 0;
-  padding: 20px 30px 20px 40px;
+  padding: 20px 30px;
   display: inline-block;
   border-radius: 10px;
   background-image: linear-gradient(

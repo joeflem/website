@@ -14,6 +14,8 @@ interface UnstyledCardProps {
   logo: string | StaticImport;
   footerText?: string;
   active?: boolean;
+  linkedRight?: boolean;
+  linkedLeft?: boolean;
 }
 
 const UnstyledCard = ({
@@ -35,6 +37,8 @@ const UnstyledCard = ({
 
 interface CardProps {
   active?: boolean;
+  linkedRight?: boolean;
+  linkedLeft?: boolean;
 }
 
 const Card = styled(UnstyledCard)<CardProps>`
@@ -72,6 +76,39 @@ const Card = styled(UnstyledCard)<CardProps>`
     border-radius: 13px;
     box-shadow: 0 0 #0000, 0 0 #0000, ${props.theme.shadow};
   }`}
+  ${(props) =>
+    props.linkedLeft &&
+    `
+  left: -15px; 
+  z-index: -1;
+  `}
+  ${(props) =>
+    props.linkedRight &&
+    `
+    right: -15px; 
+  &:after{
+    content: "+";
+    width: 40px;
+    height: 40px;
+    background-color: ${props.theme.cardBackground};
+    border-radius: 50%;
+    color: ${props.theme.translucent};
+    font-size: 36px;
+    font-weight: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -26px;
+    line-height: 35px;
+    display: inline-block;
+    text-align: center;
+    z-index: 999;
+    box-shadow: 0 0 #0000, 0 0 #0000, ${props.theme.shadow};
+  }
+  `}
 `;
 
 export default Card;

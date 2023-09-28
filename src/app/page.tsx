@@ -6,17 +6,7 @@ import CardScroller from "./UI/CardScroller";
 export default function Page() {
   return (
     <main>
-      <GradientWelcome>
-        <figure>
-          <Image
-            alt="Joe Fleming"
-            src="https://avatars.githubusercontent.com/u/45002285?v=4"
-            width="60"
-            height="60"
-          />
-        </figure>
-        👋 Hello, I&apos;m Joe.
-      </GradientWelcome>
+      <GradientWelcome>👋 Hello, I&apos;m Joe.</GradientWelcome>
       <p>
         I&apos;m a frontend developer with a passion for building great teams,
         great products, and great user experiences.

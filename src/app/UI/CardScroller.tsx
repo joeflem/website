@@ -8,6 +8,7 @@ import somarketing from "/public/img/somarketing.png";
 import healthcare21 from "/public/img/healthcare21.png";
 import harrisoncarloss from "/public/img/harrisoncarloss.png";
 import huler from "/public/img/huler.png";
+import colourandcode from "/public/img/colourandcode.png";
 
 interface ScrollingContainerProps {
   $leftPosition: number;
@@ -69,11 +70,20 @@ const UnstyledCardScroller = ({ className }: UnstyledCardScrollerProps) => {
         <ScrollingCarousel>
           <Card
             title="Huler"
-            subTitle="Tech Lead (Frontend)"
+            subTitle="Tech Lead"
             logo={huler}
             bodyText="Leading a team of frontend engineers building and maintaining a set of React applications for our SaaS product."
-            footerText="2020-Present"
+            footerText="2023-Present"
             active
+            linkedRight
+          />
+          <Card
+            title="Huler"
+            subTitle="Lead Frontend Developer"
+            logo={huler}
+            bodyText="Leading a team of frontend engineers building and maintaining a set of React applications for our SaaS product."
+            footerText="2020-2023"
+            linkedLeft
           />
           <Card
             title="Harrison Carloss"
@@ -86,14 +96,30 @@ const UnstyledCardScroller = ({ className }: UnstyledCardScrollerProps) => {
             title="Healthcare21"
             subTitle="Junior Frontend Developer"
             logo={healthcare21}
-            bodyText="Maintaining a set of React, Angular and Wordpress websites for clients."
+            bodyText="Maintaining a mixture of React, Angular and Wordpress websites for clients."
             footerText="2018-2019"
+          />
+          <Card
+            title="SO Marketing"
+            subTitle="Web Developer"
+            logo={somarketing}
+            bodyText="Building and maintaining a variety of Wordpress websites for clients. Built and maintained an 'off the shelf' E-Commerce solution."
+            footerText="2016-2018"
+            linkedRight
           />
           <Card
             title="SO Marketing"
             subTitle="Apprentice Developer"
             logo={somarketing}
             bodyText="Building and maintaining a variety of Wordpress websites for clients."
+            footerText="2015-2016"
+            linkedLeft
+          />
+          <Card
+            title="Colour & Code"
+            subTitle="Designer / Developer"
+            logo={colourandcode}
+            bodyText="Designed and built a variety of websites for clients."
             footerText="2015-2018"
           />
         </ScrollingCarousel>

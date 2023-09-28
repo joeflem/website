@@ -26,9 +26,20 @@ const BaseContextProvider = ({ children }: BaseContextProviderProps) => {
 
   useEffect(() => {
     const localTheme = localStorage.getItem("theme");
-    if (localTheme) {
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+
+    if (mediaQuery && mediaQuery.matches && !localTheme) {
+      setTheme("dark");
+    } else if (localTheme) {
       setTheme(localTheme as "light" | "dark");
     }
+
+    // watch the user's OS theme for changes
+    const handleChange = () => {
+      setTheme(mediaQuery.matches ? "dark" : "light");
+    };
+
+    mediaQuery.addEventListener("change", handleChange);
   }, []);
 
   return (

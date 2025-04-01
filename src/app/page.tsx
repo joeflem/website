@@ -6,7 +6,9 @@ import CardScroller from "./UI/CardScroller";
 export default function Page() {
   return (
     <main>
-      <GradientWelcome>👋 Hello, I&apos;m Joe.</GradientWelcome>
+      <h1>
+        👋 <GradientWelcome>Hello, I&apos;m Joe.</GradientWelcome>
+      </h1>
       <p>
         I’m a frontend engineer with close to a decade in the industry, cutting
         my teeth on WordPress sites before diving headfirst into modern
@@ -14,7 +16,6 @@ export default function Page() {
         around TypeScript, Vue, React, and Next.js—building everything from
         marketing pages to complex, scalable web apps.
       </p>
-
       <p>
         I’ve worn a few hats along the way: Web Developer, Frontend Engineer,
         Tech Lead, and now Head of Engineering. I’ve led small, focused teams
@@ -23,7 +24,6 @@ export default function Page() {
         DigitalOcean, and I’ve got a loose but growing handle on the broader AWS
         suite.
       </p>
-
       <p>
         What drives me isn’t just the tech (though I love a clean component or a
         well-architected system). It’s solving interesting problems, making
@@ -45,6 +45,8 @@ export default function Page() {
         </Link>
         .
       </p>
+      &nbsp;
+      <h2>Experience</h2>
       <CardScroller />
     </main>
   );

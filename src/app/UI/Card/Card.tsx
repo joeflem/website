@@ -43,7 +43,7 @@ const Card = styled(UnstyledCard)<CardProps>`
   box-shadow: 0 0 #0000, 0 0 #0000, ${(props) => props.theme.shadow};
   background-color: ${(props) => props.theme.cardBackground};
   border-radius: 10px;
-  width: 300px;
+  width: 350px;
   flex-shrink: 0;
   align-self: stretch;
   display: flex;

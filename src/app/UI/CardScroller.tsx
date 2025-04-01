@@ -70,11 +70,19 @@ const UnstyledCardScroller = ({ className }: UnstyledCardScrollerProps) => {
         <ScrollingCarousel>
           <Card
             title="Huler"
+            subTitle="Head of Engineering"
+            logo={huler}
+            bodyText="Leading an engineering team and collaborating closely with product to build Huler — a modern, integrated digital workplace platform designed to bring clarity, connection, and simplicity to the way people work."
+            footerText="2023-Present"
+            active
+            linkedRight
+          />
+          <Card
+            title="Huler"
             subTitle="Tech Lead"
             logo={huler}
             bodyText="Leading a team of frontend engineers building and maintaining a set of React applications for our SaaS product."
-            footerText="2023-Present"
-            active
+            footerText="2023-2024"
             linkedRight
           />
           <Card
@@ -83,7 +91,6 @@ const UnstyledCardScroller = ({ className }: UnstyledCardScrollerProps) => {
             logo={huler}
             bodyText="Leading a team of frontend engineers building and maintaining a set of React applications for our SaaS product."
             footerText="2020-2023"
-            linkedLeft
           />
           <Card
             title="Harrison Carloss"
@@ -113,7 +120,6 @@ const UnstyledCardScroller = ({ className }: UnstyledCardScrollerProps) => {
             logo={somarketing}
             bodyText="Building and maintaining a variety of Wordpress websites for clients."
             footerText="2015-2016"
-            linkedLeft
           />
           <Card
             title="Colour & Code"
@@ -132,6 +138,9 @@ const CardScroller = styled(UnstyledCardScroller)`
   margin: 0 -20px;
   opacity: 0;
   animation: fadeIn 0.5s 0.5s forwards;
+  & {
+    margin-right: 60px;
+  }
   @keyframes fadeIn {
     from {
       opacity: 0;

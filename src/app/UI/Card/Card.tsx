@@ -15,7 +15,6 @@ interface UnstyledCardProps {
   footerText?: string;
   active?: boolean;
   linkedRight?: boolean;
-  linkedLeft?: boolean;
 }
 
 const UnstyledCard = ({
@@ -38,7 +37,6 @@ const UnstyledCard = ({
 interface CardProps {
   active?: boolean;
   linkedRight?: boolean;
-  linkedLeft?: boolean;
 }
 
 const Card = styled(UnstyledCard)<CardProps>`
@@ -77,15 +75,9 @@ const Card = styled(UnstyledCard)<CardProps>`
     box-shadow: 0 0 #0000, 0 0 #0000, ${props.theme.shadow};
   }`}
   ${(props) =>
-    props.linkedLeft &&
-    `
-  left: -15px; 
-  z-index: -1;
-  `}
-  ${(props) =>
     props.linkedRight &&
     `
-    right: -15px; 
+    margin-right: -10px !important;
   &:after{
     content: "+";
     width: 40px;

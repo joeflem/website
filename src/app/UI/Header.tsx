@@ -15,7 +15,6 @@ const UnstyledHeader = ({ className }: UnstyledHeaderProps) => {
     <header className={className}>
       <Link href="/">
         <ProfilePic />
-        @joefleming
       </Link>
       <ModeSwitcher />
     </header>

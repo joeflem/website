@@ -2,7 +2,6 @@
 
 import { useContext } from "react";
 import styled, { ThemeProvider } from "styled-components";
-import { GlobalStyles } from "@/app/styling/GlobalStyles";
 import { lightTheme, darkTheme } from "@/app/styling/themes";
 import { BaseContext } from "@/context/BaseContext";
 
@@ -18,7 +17,6 @@ const UnstyledLayoutWrapper = ({
   return (
     <div className={className}>
       <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
-        <GlobalStyles />
         {children}
       </ThemeProvider>
     </div>

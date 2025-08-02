@@ -1,15 +1,11 @@
 "use client";
 
-import styled from "styled-components";
 import Link from "next/link";
+import styles from "./Nav.module.css";
 
-interface UnstyledNavProps {
-  className?: string;
-}
-
-const UnstyledNav = ({ className }: UnstyledNavProps) => {
+const Nav = () => {
   return (
-    <nav className={className}>
+    <nav className={styles.nav}>
       <ul>
         <li>
           <Link href="/">Info</Link>
@@ -21,27 +17,5 @@ const UnstyledNav = ({ className }: UnstyledNavProps) => {
     </nav>
   );
 };
-
-const Nav = styled(UnstyledNav)`
-  ul {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    li {
-      a {
-        color: ${(props) => props.theme.text};
-        padding: 0 10px;
-        opacity: 0.75;
-        transition: 0.25s ease;
-        text-decoration: none;
-        &:hover {
-          color: ${(props) => props.theme.primaryColor};
-          opacity: 1;
-        }
-      }
-    }
-  }
-`;
 
 export default Nav;

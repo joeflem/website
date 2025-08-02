@@ -1,24 +1,15 @@
-import styled from "styled-components";
+import styles from "./CardBody.module.css";
 
-interface UnstyledCardBodyProps {
-  className?: string;
+interface CardBodyProps {
   text: string;
 }
 
-const UnstyledCardBody = ({ className, text }: UnstyledCardBodyProps) => {
+const CardBody = ({ text }: CardBodyProps) => {
   return (
-    <div className={className}>
+    <div className={styles.cardBody}>
       <p>{text}</p>
     </div>
   );
 };
-
-const CardBody = styled(UnstyledCardBody)`
-  padding: 5px 20px;
-  p {
-    font-size: 14px;
-    margin: 0;
-  }
-`;
 
 export default CardBody;

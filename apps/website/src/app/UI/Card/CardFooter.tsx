@@ -1,24 +1,15 @@
-import styled from "styled-components";
+import styles from "./CardFooter.module.css";
 
-interface UnstyledCardFooterProps {
-  className?: string;
+interface CardFooterProps {
   text: string;
 }
 
-const UnstyledCardFooter = ({ className, text }: UnstyledCardFooterProps) => {
+const CardFooter = ({ text }: CardFooterProps) => {
   return (
-    <div className={className}>
+    <div className={styles.cardFooter}>
       <p>{text}</p>
     </div>
   );
 };
-
-const CardFooter = styled(UnstyledCardFooter)`
-  padding: 10px 20px;
-  opacity: 0.5;
-  p {
-    margin: 0;
-  }
-`;
 
 export default CardFooter;

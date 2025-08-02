@@ -8,10 +8,10 @@ import linkedinwhite from "/public/icons/linkedin-white.svg";
 import githubwhite from "/public/icons/github-white.svg";
 import styles from "./Social.module.css";
 import { useContext } from "react";
-import { ThemeContext } from "@/app/styling/ThemeProvider";
+import { BaseContext } from "@/context/BaseContext";
 
 const Social = () => {
-  const { theme } = useContext(ThemeContext);
+  const { theme } = useContext(BaseContext);
   return (
     <nav className={styles.social}>
       <ul>

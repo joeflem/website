@@ -1,3 +1,4 @@
+"use client";
 import { useContext } from "react";
 import { BaseContext } from "@/context/BaseContext";
 import styles from "./LayoutWrapper.module.css";

@@ -8,8 +8,9 @@
 .scrollingContainer > div > div > * {
   margin: 20px;
 }
-.scrollingContainer > div > div > *:last-child {
-  margin-right: 60px;
+
+.lastCard {
+  width: 30px;
 }
 
 .cardScroller {

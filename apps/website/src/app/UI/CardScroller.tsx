@@ -137,6 +137,7 @@ const UnstyledCardScroller = ({ className }: UnstyledCardScrollerProps) => {
               bodyText="Designed and built a variety of websites for clients."
               footerText="2015-2018"
             />,
+            <figure className={styles.lastCard} key="last" />,
           ]}
         </ScrollingCarousel>
       </ScrollingContainer>

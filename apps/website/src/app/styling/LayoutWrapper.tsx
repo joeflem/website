@@ -9,17 +9,7 @@ interface LayoutWrapperProps {
 
 const LayoutWrapper = ({ children }: LayoutWrapperProps) => {
   const { theme } = useContext(BaseContext);
-  return (
-    <div
-      className={
-        theme === "light"
-          ? `${styles.layoutWrapper} ${styles.light}`
-          : `${styles.layoutWrapper} ${styles.dark}`
-      }
-    >
-      {children}
-    </div>
-  );
+  return <div className={styles.layoutWrapper}>{children}</div>;
 };
 
 export default LayoutWrapper;

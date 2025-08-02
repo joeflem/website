@@ -15,15 +15,3 @@
     box-sizing: border-box;
   }
 }
-
-.light {
-  --border-color: #eaeaea;
-  background: #fff;
-  color: #222;
-}
-
-.dark {
-  --border-color: #222;
-  background: #181818;
-  color: #f5f5f5;
-}

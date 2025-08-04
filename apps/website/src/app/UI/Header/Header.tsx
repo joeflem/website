@@ -1,8 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import ModeSwitcher from "./ModeSwitcher";
-import ProfilePic from "./ProfilePic";
+import ModeSwitcher from "@/app/UI/ModeSwitcher/ModeSwitcher";
+import ProfilePic from "@/app/UI/ProfilePic/ProfilePic";
 import styles from "./Header.module.css";
 
 const Header = () => {

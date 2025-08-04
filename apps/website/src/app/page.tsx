@@ -1,10 +1,9 @@
 import Image from "next/image";
 import { PortableText } from "next-sanity";
-import { GradientWelcome } from "./UI/GradientWelcome";
-import CardScroller from "./UI/Experience";
+import { GradientWelcome } from "./UI/GradientWelcome/GradientWelcome";
 import { client } from "@/lib/sanity/client";
 import { ExperienceType, HomepageType } from "@/lib/sanity/types";
-import Experience from "./UI/Experience";
+import Experience from "./UI/Experience/Experience";
 
 const POSTS_QUERY = `*[
   _type == "homepage"

@@ -1,5 +1,5 @@
 .layoutWrapper {
-  width: 700px;
+  width: 1078px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -7,6 +7,7 @@
 }
 .layoutWrapper > main {
   flex-grow: 1;
+  border: var(--border);
 }
 @media (max-width: 750px) {
   .layoutWrapper {

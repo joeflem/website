@@ -3,9 +3,9 @@ import { Inter } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
 import LayoutWrapper from "./styling/LayoutWrapper";
-import Header from "@/app/UI/Header/Header";
+import Header from "@/app/Components/Header/Header";
 import BaseContextProvider from "@/context/BaseContext";
-import Footer from "./UI/Footer/Footer";
+import Footer from "./Components/Footer/Footer";
 import "./styling/globals.css";
 import ThemeInjector from "./styling/ThemeInjector";
 

@@ -1,7 +1,7 @@
 "use client";
 
 import styles from "./Footer.module.css";
-import Social from "@/app/UI/Social/Social";
+import Social from "@/app/Components/Social/Social";
 
 const Footer = () => {
   return (

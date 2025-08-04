@@ -21,17 +21,12 @@ const EXPERIENCE_QUERY = `*[_type == "experience"][0]{
   }
 }`;
 
+export const revalidate = 60; // Revalidate every 60 seconds
+export const runtime = "edge";
+
 export default async function Page() {
-  const pageData = await client.fetch<HomepageType>(
-    POSTS_QUERY,
-    {},
-    { cache: "no-store" }
-  );
-  const experience = await client.fetch<ExperienceType>(
-    EXPERIENCE_QUERY,
-    {},
-    { cache: "no-store" }
-  );
+  const pageData = await client.fetch<HomepageType>(POSTS_QUERY);
+  const experience = await client.fetch<ExperienceType>(EXPERIENCE_QUERY);
   return (
     <main>
       <Intro>

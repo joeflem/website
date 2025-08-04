@@ -1,0 +1,20 @@
+.profilePic {
+  width: 48px;
+  height: 48px;
+  margin: 0 10px 0 0;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.15s ease-in-out;
+}
+
+.profilePic img {
+  border-radius: 50%;
+  z-index: 1;
+  width: 42px;
+  height: 42px;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}

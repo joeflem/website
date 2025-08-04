@@ -1,13 +1,14 @@
+import { PortableText, PortableTextBlock } from "next-sanity";
 import styles from "./CardBody.module.css";
 
 interface CardBodyProps {
-  text: string;
+  text: PortableTextBlock[];
 }
 
 const CardBody = ({ text }: CardBodyProps) => {
   return (
     <div className={styles.cardBody}>
-      <p>{text}</p>
+      <PortableText value={text} />
     </div>
   );
 };

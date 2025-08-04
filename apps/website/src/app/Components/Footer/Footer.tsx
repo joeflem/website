@@ -1,7 +1,8 @@
 "use client";
 
+import Image from "next/image";
 import styles from "./Footer.module.css";
-import Social from "./Social";
+import Social from "@/app/Components/Social/Social";
 
 const Footer = () => {
   return (

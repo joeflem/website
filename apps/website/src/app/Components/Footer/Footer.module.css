@@ -1,6 +1,5 @@
 .footer {
   padding: 30px 50px;
-  font-size: 18px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -11,7 +10,4 @@
 .footer > a {
   color: var(--text-color, #222);
   text-decoration: none;
-}
-.copyright {
-  font-size: 14px;
 }

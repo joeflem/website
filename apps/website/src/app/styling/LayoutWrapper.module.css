@@ -1,18 +1,20 @@
 .layoutWrapper {
-  width: 1078px;
+  width: 100%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  width: 100%;
+  padding: 0;
+  box-sizing: border-box;
+  @media (min-width: 500px) {
+    padding: 0 30px;
+  }
+  @media (min-width: 1080px) {
+    width: 1078px;
+  }
 }
 .layoutWrapper > main {
   flex-grow: 1;
   border: var(--border);
-}
-@media (max-width: 1080px) {
-  .layoutWrapper {
-    width: 100%;
-    padding: 0 30px;
-    box-sizing: border-box;
-  }
 }

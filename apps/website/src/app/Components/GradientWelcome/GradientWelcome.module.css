@@ -2,7 +2,6 @@
   margin: 0;
   display: inline-block;
   border-radius: 10px;
-  font-size: 32px;
   background-image: linear-gradient(
     125deg,
     #e642ed,
@@ -18,11 +17,6 @@
   -webkit-text-fill-color: transparent;
   animation: textGradientAnimation 15s infinite;
   position: relative;
-}
-@media (max-width: 400px) {
-  .gradientWelcome {
-    font-size: 28px;
-  }
 }
 .gradientWelcome figure {
   position: absolute;

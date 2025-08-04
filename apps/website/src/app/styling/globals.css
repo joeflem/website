@@ -1,3 +1,12 @@
+html {
+  font-size: 12px;
+  @media screen and (min-width: 500px) {
+    font-size: 14px;
+  }
+  @media screen and (min-width: 800px) {
+    font-size: 16px;
+  }
+}
 body {
   --body-bg: #fff;
   --text-color: #222;
@@ -8,24 +17,27 @@ body {
   transition: all 0.2s ease-in-out;
 }
 
+h1 {
+  font-size: 2rem;
+}
+h2 {
+  font-size: 1.5rem;
+}
+
 p {
-  line-height: 1.8;
-  font-weight: 300;
-  font-size: 15px;
+  line-height: 1.75rem;
+  font-weight: 400;
+  font-size: 1rem;
 }
 
 p a {
   color: var(--primary-color) !important;
 }
 
-p {
-  font-weight: 400;
-}
-
 blockquote {
   margin: 0;
   padding: 20px 0;
-  font-size: 22px;
+  font-size: 1.3rem;
   line-height: 32px;
   font-weight: 500;
   opacity: 0.85;

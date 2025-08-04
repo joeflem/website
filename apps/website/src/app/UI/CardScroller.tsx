@@ -4,11 +4,6 @@ import { ScrollingCarousel } from "@trendyol-js/react-carousel";
 import { useRef, useState, useEffect } from "react";
 import styles from "./CardScroller.module.css";
 import Card from "./Card/Card";
-import somarketing from "/public/img/somarketing.png";
-import healthcare21 from "/public/img/healthcare21.png";
-import harrisoncarloss from "/public/img/harrisoncarloss.png";
-import huler from "/public/img/huler.png";
-import colourandcode from "/public/img/colourandcode.png";
 import { forwardRef } from "react";
 import { ExperienceItem } from "@/lib/sanity/types";
 
@@ -37,9 +32,14 @@ ScrollingContainer.displayName = "ScrollingContainer";
 interface CardScrollerProps {
   className?: string;
   experience: ExperienceItem[];
+  leftPos?: string;
 }
 
-const CardScroller = ({ className, experience }: CardScrollerProps) => {
+const CardScroller = ({
+  className,
+  experience,
+  leftPos,
+}: CardScrollerProps) => {
   const [leftPosition, setLeftPosition] = useState(300);
 
   const ref = useRef<HTMLDivElement>(null);
@@ -57,6 +57,22 @@ const CardScroller = ({ className, experience }: CardScrollerProps) => {
     return () => window.removeEventListener("resize", getLeftPosFromRef);
   }, []);
 
+  const fromDate = (date: string) => {
+    const d = new Date(date);
+    return d.toLocaleDateString("en-US", {
+      month: "short",
+      year: "numeric",
+    });
+  };
+
+  const toDate = (date: string) => {
+    const d = new Date(date);
+    return d.toLocaleDateString("en-US", {
+      month: "short",
+      year: "numeric",
+    });
+  };
+
   return (
     <div
       className={className}
@@ -65,6 +81,7 @@ const CardScroller = ({ className, experience }: CardScrollerProps) => {
         paddingBottom: scrollingContainerRef?.current
           ? scrollingContainerRef?.current?.getBoundingClientRect().height
           : 300,
+        left: leftPos ? leftPos : `${leftPosition}px`,
       }}
     >
       <ScrollingContainer
@@ -80,7 +97,10 @@ const CardScroller = ({ className, experience }: CardScrollerProps) => {
                 subTitle={item.jobTitle}
                 logo={item.logo}
                 bodyText={item.description}
-                footerText={`${item.from} - ${item.to}`}
+                active={!item.to}
+                footerText={`${fromDate(item.from)} - ${
+                  item.to ? toDate(item.to) : "Present"
+                }`}
               />
             ))}
           </ScrollingCarousel>

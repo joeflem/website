@@ -10,9 +10,8 @@ const POSTS_QUERY = `*[
   _type == "homepage"
 ]|order(publishedAt desc)[0]{_id, title, description}`;
 
-const EXPERIENCE_QUERY = `*[_type == "experience"]{
-  _id,
-  items[] {
+const EXPERIENCE_QUERY = `*[_type == "experience"][0]{
+  "items": items[] | order(from desc){
     _key,
     logo,
     company,
@@ -42,7 +41,7 @@ export default async function Page() {
       </h1>
       <PortableText value={pageData.description} />
       <h2>Experience</h2>
-      <ExperienceWrapper experience={experience[0]?.items} />
+      <ExperienceWrapper experience={experience?.items} />
     </main>
   );
 }

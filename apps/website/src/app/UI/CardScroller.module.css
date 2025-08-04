@@ -14,7 +14,7 @@
 }
 
 .cardScroller {
-  margin: 0 -20px;
+  margin: 0 -50px;
   opacity: 0;
   animation: fadeIn 0.5s 0.5s forwards;
 }

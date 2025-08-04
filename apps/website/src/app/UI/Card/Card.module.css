@@ -3,7 +3,7 @@
     var(--card-shadow, 0 2px 8px 0 rgba(0, 0, 0, 0.1));
   background-color: var(--card-background, #fff);
   border-radius: 10px;
-  width: 350px;
+  width: 500px;
   flex-shrink: 0;
   align-self: stretch;
   display: flex;
@@ -34,31 +34,7 @@
   box-shadow: 0 0 #0000, 0 0 #0000,
     var(--card-shadow, 0 2px 8px 0 rgba(0, 0, 0, 0.1));
 }
-.card.linkedRight {
-  margin-right: -10px !important;
-}
-.card.linkedRight::after {
-  content: "+";
-  width: 40px;
-  height: 40px;
-  background-color: var(--card-background, #fff);
-  border-radius: 50%;
-  color: var(--card-translucent, #bbb);
-  font-size: 36px;
-  font-weight: 100;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  right: -26px;
-  line-height: 35px;
-  text-align: center;
-  z-index: 999;
-  box-shadow: 0 0 #0000, 0 0 #0000,
-    var(--card-shadow, 0 2px 8px 0 rgba(0, 0, 0, 0.1));
-}
+
 @keyframes bganimation {
   0% {
     background-position: 0% 50%;

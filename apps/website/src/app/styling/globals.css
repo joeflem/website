@@ -2,9 +2,6 @@ html {
   font-size: 16px;
 }
 body {
-  --body-bg: #fff;
-  --text-color: #222;
-  --primary-color: #0070f3;
   background: var(--body-bg);
   color: var(--text-color);
   transition: all 0.2s ease-in-out;
@@ -13,20 +10,22 @@ body {
 h1 {
   font-size: 2.2rem;
   letter-spacing: -0.07rem;
+  color: var(--contrast);
 }
 h2 {
   font-size: 1.5rem;
   font-weight: 500;
   letter-spacing: -0.05rem;
+  color: var(--contrast);
 }
 h3 {
   font-size: 1.2rem;
   font-weight: 500;
-  letter-spacing: -0.02rem;
+  letter-spacing: -0.01rem;
 }
 p {
-  line-height: 1.9rem;
-  font-weight: 200;
+  line-height: 1.7rem;
+  font-weight: 400;
   font-size: 1rem;
 }
 
@@ -40,9 +39,9 @@ blockquote {
   font-size: 1.3rem;
   line-height: 2rem;
   font-weight: 500;
-  opacity: 0.85;
   width: 100%;
   letter-spacing: -0.05rem;
+  color: var(--contrast);
   @media screen and (min-width: 500px) {
     width: 85%;
   }

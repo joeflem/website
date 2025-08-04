@@ -1,9 +1,9 @@
-import Image from "next/image";
 import { PortableText } from "next-sanity";
 import { GradientWelcome } from "./Components/GradientWelcome/GradientWelcome";
 import { client } from "@/lib/sanity/client";
 import { ExperienceType, HomepageType } from "@/lib/sanity/types";
 import Experience from "./Components/Experience/Experience";
+import { Intro } from "./Components/Intro/Intro";
 
 const POSTS_QUERY = `*[
   _type == "homepage"
@@ -32,13 +32,14 @@ export default async function Page() {
     {},
     { cache: "no-store" }
   );
-  console.log("Experience Data:", experience.items);
   return (
     <main>
-      <h1>
-        👋 <GradientWelcome>{pageData.title}</GradientWelcome>
-      </h1>
-      <PortableText value={pageData.description} />
+      <Intro>
+        <h1>
+          👋 <GradientWelcome>{pageData.title}</GradientWelcome>
+        </h1>
+        <PortableText value={pageData.description} />
+      </Intro>
       <Experience experience={experience?.items} />
     </main>
   );

@@ -1,4 +1,5 @@
 .experience {
+  padding: 50px 0;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
@@ -10,9 +11,10 @@
 }
 .overview {
   grid-area: Overview;
+  padding: 0 30px;
   .overviewText {
     position: sticky;
-    top: 20px;
+    top: 30px;
   }
 }
 .items {

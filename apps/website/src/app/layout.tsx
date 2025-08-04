@@ -10,7 +10,7 @@ import Footer from "./Components/Footer/Footer";
 import "./styling/globals.css";
 import ThemeInjector from "./styling/ThemeInjector";
 
-const inter = Inter({ subsets: ["latin"] });
+import { GeistSans } from "geist/font/sans";
 
 export const metadata: Metadata = {
   title: "Joe Fleming",
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={GeistSans.className}>
         <BaseContextProvider>
           <Analytics />
           <SpeedInsights />

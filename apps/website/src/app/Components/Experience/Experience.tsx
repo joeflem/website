@@ -1,5 +1,3 @@
-"use client";
-
 import styles from "./Experience.module.css";
 import Card from "../Card/Card";
 import { ExperienceItemType } from "@/lib/sanity/types";

@@ -1,9 +1,6 @@
-"use client";
-
 import CardHeader from "./CardHeader";
 import CardFooter from "./CardFooter";
 import CardBody from "./CardBody";
-import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import styles from "./Card.module.css";
 import { PortableTextBlock } from "next-sanity";
 import imageUrlBuilder from "@sanity/image-url";

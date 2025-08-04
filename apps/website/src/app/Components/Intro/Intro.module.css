@@ -1,6 +1,5 @@
 .intro {
-  padding: 100px;
-  margin-bottom: 20px;
+  padding: 100px 50px;
   background-image: radial-gradient(
     circle at 1px 1px,
     var(--dots-color) 1px,

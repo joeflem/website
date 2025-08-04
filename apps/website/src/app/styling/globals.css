@@ -9,8 +9,9 @@ body {
 }
 
 p {
-  line-height: 2;
+  line-height: 1.8;
   font-weight: 300;
+  font-size: 15px;
 }
 
 p a {
@@ -28,4 +29,5 @@ blockquote {
   line-height: 32px;
   font-weight: 500;
   opacity: 0.85;
+  width: 85%;
 }

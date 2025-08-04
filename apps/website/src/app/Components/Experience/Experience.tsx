@@ -29,8 +29,13 @@ const Experience = ({ experience }: ExperienceProps) => {
     <div className={styles.experience}>
       <div className={styles.overview}>
         <div className={styles.overviewText}>
-          <h1>Experience</h1>
-          <p>Some cool stuff</p>
+          <h2>Experience</h2>
+          <p>
+            I’ve had the pleasure of working with some great teams at fantastic
+            companies. Along the way, I’ve learned a lot—especially from the
+            things that didn’t go to plan. Those lessons have shaped how I work
+            today.
+          </p>
         </div>
       </div>
       <div className={styles.items}>

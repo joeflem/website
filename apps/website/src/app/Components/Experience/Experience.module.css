@@ -1,5 +1,4 @@
 .experience {
-  padding: 50px 0;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
@@ -8,15 +7,34 @@
     "Overview Items Items"
     "Overview Items Items"
     "Overview Items Items";
+  border-top: var(--border);
+}
+@media (max-width: 1080px) {
+  .experience {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "Overview"
+      "Items";
+  }
 }
 .overview {
   grid-area: Overview;
-  padding: 0 30px;
+  border-right: var(--border);
+  @media (max-width: 1080px) {
+    border-right: none;
+    border-bottom: var(--border);
+  }
+  padding: 50px;
   .overviewText {
     position: sticky;
-    top: 30px;
+    top: 50px;
+    @media (max-width: 1080px) {
+      position: relative;
+    }
   }
 }
+
 .items {
   display: grid;
   grid-template-columns: 1fr;

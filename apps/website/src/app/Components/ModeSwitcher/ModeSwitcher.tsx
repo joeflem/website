@@ -17,8 +17,8 @@ const ModeSwitcher = ({ className }: UnstyledModeSwitcherProps) => {
         <Image
           alt={`${theme === "dark" ? "Dark" : "Light"} Mode`}
           src={theme === "dark" ? Light : Dark}
-          width={28}
-          height={28}
+          width={22}
+          height={22}
         />
       </button>
     </div>

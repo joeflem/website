@@ -1,10 +1,10 @@
 import Image from "next/image";
 import { PortableText } from "next-sanity";
 import { GradientWelcome } from "./UI/GradientWelcome";
-import CardScroller from "./UI/CardScroller";
+import CardScroller from "./UI/Experience";
 import { client } from "@/lib/sanity/client";
-import { Experience, Homepage } from "@/lib/sanity/types";
-import ExperienceWrapper from "./UI/ExperienceWrapper";
+import { ExperienceType, HomepageType } from "@/lib/sanity/types";
+import Experience from "./UI/Experience";
 
 const POSTS_QUERY = `*[
   _type == "homepage"
@@ -23,12 +23,12 @@ const EXPERIENCE_QUERY = `*[_type == "experience"][0]{
 }`;
 
 export default async function Page() {
-  const pageData = await client.fetch<Homepage>(
+  const pageData = await client.fetch<HomepageType>(
     POSTS_QUERY,
     {},
     { cache: "no-store" }
   );
-  const experience = await client.fetch<Experience>(
+  const experience = await client.fetch<ExperienceType>(
     EXPERIENCE_QUERY,
     {},
     { cache: "no-store" }
@@ -40,8 +40,7 @@ export default async function Page() {
         👋 <GradientWelcome>{pageData.title}</GradientWelcome>
       </h1>
       <PortableText value={pageData.description} />
-      <h2>Experience</h2>
-      <ExperienceWrapper experience={experience?.items} />
+      <Experience experience={experience?.items} />
     </main>
   );
 }

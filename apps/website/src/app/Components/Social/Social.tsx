@@ -24,10 +24,7 @@ const Social = () => {
               height={22}
             />
           </Link>
-          <Link
-            href="https://www.linkedin.com/in/joe-c-4646a7107/"
-            target="_blank"
-          >
+          <Link href="https://www.linkedin.com/in/j-flem/" target="_blank">
             <Image
               alt="LinkedIn"
               src={theme === "dark" ? linkedinwhite : linkedin}

@@ -11,7 +11,7 @@ interface CardHeaderProps {
 const CardHeader = ({ logo, title, subTitle }: CardHeaderProps) => {
   return (
     <div className={styles.cardHeader}>
-      <Image src={logo} alt={title} width={40} height={40} />
+      {logo && <Image src={logo} alt={title} width={40} height={40} />}
       <div>
         <h3>{title}</h3>
         <p>{subTitle}</p>

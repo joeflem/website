@@ -1,0 +1,24 @@
+import { SanityImageSource } from "@sanity/image-url/lib/types/types";
+import { PortableTextBlock, SanityDocument } from "next-sanity";
+
+export type Homepage = {
+  _key: string;
+  title: boolean;
+  description: PortableTextBlock[];
+};
+
+export type ExperienceItem = {
+  _key: string;
+  logo: SanityImageSource;
+  company: string;
+  jobTitle: string;
+  description: PortableTextBlock[];
+  from: string;
+  to: string;
+};
+
+export type Experience = SanityDocument &
+  {
+    _id: string;
+    items: ExperienceItem[];
+  }[];

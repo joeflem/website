@@ -6,6 +6,7 @@
   align-items: center;
   border-left: var(--border);
   border-right: var(--border);
+  border-bottom: var(--border);
 }
 .footer > a {
   color: var(--text-color, #222);

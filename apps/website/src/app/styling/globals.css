@@ -31,3 +31,15 @@ blockquote {
   opacity: 0.85;
   width: 85%;
 }
+
+.peekLogo {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%) translateY(55px);
+  bottom: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.7;
+  height: 60px;
+  width: 60px;
+}

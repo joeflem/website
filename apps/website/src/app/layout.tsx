@@ -8,6 +8,7 @@ import BaseContextProvider from "@/context/BaseContext";
 import Footer from "./Components/Footer/Footer";
 import "./styling/globals.css";
 import ThemeInjector from "./styling/ThemeInjector";
+import Image from "next/image";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -30,6 +31,13 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
             <Footer />
           </LayoutWrapper>
         </BaseContextProvider>
+        <Image
+          src="img/jf.svg"
+          alt="Joe Fleming"
+          className="peekLogo"
+          width={100}
+          height={100}
+        />
       </body>
     </html>
   );

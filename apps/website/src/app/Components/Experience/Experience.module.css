@@ -20,17 +20,18 @@
 }
 .overview {
   grid-area: Overview;
-  border-right: var(--border);
-  @media (max-width: 1080px) {
-    border-right: none;
-    border-bottom: var(--border);
+  border-bottom: var(--border);
+  padding: 30px;
+  @media (min-width: 1080px) {
+    border-right: var(--border);
+    border-bottom: none;
+    padding: 50px;
   }
-  padding: 50px;
   .overviewText {
-    position: sticky;
-    top: 50px;
-    @media (max-width: 1080px) {
-      position: relative;
+    position: relative;
+    @media (min-width: 1080px) {
+      position: sticky;
+      top: 50px;
     }
   }
 }

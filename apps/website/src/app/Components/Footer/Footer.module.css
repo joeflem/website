@@ -6,6 +6,10 @@
   border-left: var(--border);
   border-right: var(--border);
   border-bottom: var(--border);
+  padding: 15px 30px;
+  @media (min-width: 800px) {
+    padding: 30px 50px;
+  }
 }
 .footer > a {
   color: var(--text-color, #222);

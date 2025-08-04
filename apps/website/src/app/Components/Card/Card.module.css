@@ -1,7 +1,13 @@
 .card {
   position: relative;
   border-bottom: var(--border);
-  padding: 50px 30px;
+  padding: 15px;
+  @media (min-width: 800px) {
+    padding: 30px;
+  }
+  @media (min-width: 1080px) {
+    padding: 50px 30px;
+  }
 }
 .card.active:after {
   content: "";

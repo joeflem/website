@@ -1,6 +1,3 @@
-"use client";
-import { useContext } from "react";
-import { BaseContext } from "@/context/BaseContext";
 import styles from "./LayoutWrapper.module.css";
 
 interface LayoutWrapperProps {
@@ -8,7 +5,6 @@ interface LayoutWrapperProps {
 }
 
 const LayoutWrapper = ({ children }: LayoutWrapperProps) => {
-  const { theme } = useContext(BaseContext);
   return <div className={styles.layoutWrapper}>{children}</div>;
 };
 

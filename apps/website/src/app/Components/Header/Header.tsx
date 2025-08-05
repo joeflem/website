@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 import ModeSwitcher from "@/app/Components/ModeSwitcher/ModeSwitcher";
 import ProfilePic from "@/app/Components/ProfilePic/ProfilePic";

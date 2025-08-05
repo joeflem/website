@@ -1,9 +1,8 @@
-import Image from "next/image";
+"use client";
 import { useContext } from "react";
+import { Sun, Moon } from "lucide-react";
 import styles from "./ModeSwitcher.module.css";
 import { BaseContext } from "@/context/BaseContext";
-import Dark from "public/icons/dark.svg";
-import Light from "public/icons/light.svg";
 
 interface UnstyledModeSwitcherProps {
   className?: string;
@@ -14,12 +13,11 @@ const ModeSwitcher = ({ className }: UnstyledModeSwitcherProps) => {
   return (
     <div className={className ? className : styles.modeSwitcher}>
       <button className={styles.button} onClick={() => toggleTheme()}>
-        <Image
-          alt={`${theme === "dark" ? "Dark" : "Light"} Mode`}
-          src={theme === "dark" ? Light : Dark}
-          width={22}
-          height={22}
-        />
+        {theme === "dark" ? (
+          <Sun size={22} className={styles.icon} />
+        ) : (
+          <Moon size={22} className={styles.icon} />
+        )}
       </button>
     </div>
   );

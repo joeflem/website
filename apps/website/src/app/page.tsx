@@ -1,9 +1,11 @@
 import { PortableText } from "next-sanity";
-import { GradientWelcome } from "./Components/GradientWelcome/GradientWelcome";
+import { GradientWelcome } from "./components/GradientWelcome/GradientWelcome";
 import { client } from "@/lib/sanity/client";
 import { ExperienceType, HomepageType } from "@/lib/sanity/types";
-import Experience from "./Components/Experience/Experience";
-import { Intro } from "./Components/Intro/Intro";
+import Experience from "./components/Experience/Experience";
+import { Intro } from "./components/Intro/Intro";
+import PageSection from "./components/layout/pageSection";
+import Chat from "./components/agent/chat";
 
 const POSTS_QUERY = `*[
   _type == "homepage"
@@ -27,6 +29,17 @@ export const runtime = "edge";
 export default async function Page() {
   const pageData = await client.fetch<HomepageType>(POSTS_QUERY);
   const experience = await client.fetch<ExperienceType>(EXPERIENCE_QUERY);
+  const experienceIntro = {
+    title: "Experience",
+    description:
+      "I’ve had the pleasure of working with some great teams at fantastic companies. Along the way, I’ve learned a lot—especially from the things that didn’t go to plan. Those lessons have shaped how I work today.",
+  };
+
+  const agentIntro = {
+    title: "Learn about Me",
+    description:
+      "Got any questions about my background, companies I’ve worked for, or tech terms I use? Ask away! I’m here to help.",
+  };
   return (
     <main>
       <Intro>
@@ -35,7 +48,12 @@ export default async function Page() {
         </h1>
         <PortableText value={pageData.description} />
       </Intro>
-      <Experience experience={experience?.items} />
+      <PageSection intro={experienceIntro}>
+        <Experience experience={experience?.items} />
+      </PageSection>
+      <PageSection intro={agentIntro}>
+        <Chat />
+      </PageSection>
     </main>
   );
 }

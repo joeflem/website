@@ -3,9 +3,9 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
 import Image from "next/image";
 import LayoutWrapper from "./styling/LayoutWrapper";
-import Header from "@/app/Components/Header/Header";
+import Header from "@/app/components/Header/Header";
 import BaseContextProvider from "@/context/BaseContext";
-import Footer from "./Components/Footer/Footer";
+import Footer from "./components/Footer/Footer";
 import "./styling/globals.css";
 import ThemeInjector from "./styling/ThemeInjector";
 

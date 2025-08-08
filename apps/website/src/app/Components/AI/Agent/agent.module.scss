@@ -3,6 +3,8 @@
   flex-direction: column;
   height: 100%;
   position: relative;
+  max-height: 900px;
+  overflow-y: scroll;
 }
 .messages {
   flex: 1;

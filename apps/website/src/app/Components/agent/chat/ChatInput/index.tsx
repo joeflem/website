@@ -36,6 +36,7 @@ export default function ChatInput({
             sendMessage({
               parts: [{ type: "text", text: input }],
             });
+            setInput("");
           }
         }}
         placeholder="Ask me... anything"

@@ -1,5 +1,6 @@
 "use client";
 import { Send } from "lucide-react";
+import { track } from "@vercel/analytics";
 import styles from "./ChatInput.module.scss";
 import { ChatRequestOptions, UIDataTypes, UIMessage, UITools } from "ai";
 
@@ -36,6 +37,9 @@ export default function ChatInput({
             sendMessage({
               parts: [{ type: "text", text: input }],
             });
+            track("AI Chat Message", {
+              content: input,
+            });
             setInput("");
           }
         }}
@@ -47,6 +51,9 @@ export default function ChatInput({
           if (input.trim() === "") return;
           await sendMessage({
             parts: [{ type: "text", text: input }],
+          });
+          track("AI Chat Message", {
+            content: input,
           });
           setInput("");
         }}

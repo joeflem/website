@@ -21,6 +21,10 @@ const ThemeInjector = () => {
         "--radial-gradient",
         "radial-gradient(circle,rgba(139, 92, 246, 0.25) 0%,transparent 70%)0% 0% / 100% 100% rgb(0, 0, 0)"
       );
+      root.style.setProperty(
+        "--message-background",
+        "rgba(255, 255, 255, 0.08)"
+      );
     } else {
       root.style.setProperty("--body-bg", "#fff");
       root.style.setProperty("--contrast", "#000");
@@ -34,6 +38,7 @@ const ThemeInjector = () => {
         "--radial-gradient",
         "radial-gradient(circle,rgba(139, 92, 246, 0.2) 0%,transparent 70%)0% 0% / 100% 100% rgb(255, 255, 255)"
       );
+      root.style.setProperty("--message-background", "rgba(0, 0, 0, 0.035)");
     }
   }, [theme]);
   return null;

@@ -23,7 +23,7 @@ const ThemeInjector = () => {
       );
       root.style.setProperty(
         "--message-background",
-        "rgba(255, 255, 255, 0.08)"
+        "rgba(255, 255, 255, 0.15)"
       );
     } else {
       root.style.setProperty("--body-bg", "#fff");

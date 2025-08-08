@@ -20,13 +20,13 @@ export default function Page() {
     <div className={styles.chatContainer}>
       <div className={styles.messages}>
         {messages.map((message, index) => (
-          <div key={index}>
+          <Message key={index} role={message.role}>
             {message.parts.map((part) => {
               if (part.type === "text") {
-                return <Message key={`${message.id}-text`} text={part.text} />;
+                return <p key={`${message.id}-text`}>{part.text}</p>;
               }
             })}
-          </div>
+          </Message>
         ))}
       </div>
 

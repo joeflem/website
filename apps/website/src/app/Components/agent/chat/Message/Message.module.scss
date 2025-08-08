@@ -1,6 +1,15 @@
 .message {
-    background: var(--message-background);
     padding: 10px;
-    border-radius: 5px;
-    margin-bottom: 5px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    width: 90%;
+    display: flex;
+    &.user {
+        align-self: flex-end;
+        background: var(--message-background);
+    }
+    p {
+        margin: 0;
+        color: var(--contrast);
+    }
 }

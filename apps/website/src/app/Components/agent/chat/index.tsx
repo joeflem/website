@@ -7,7 +7,7 @@ import styles from "./chat.module.scss";
 import ChatInput from "./ChatInput";
 import Message from "./Message";
 
-export default function Page() {
+export default function Chat() {
   const [input, setInput] = useState("");
 
   const { messages, sendMessage } = useChat({

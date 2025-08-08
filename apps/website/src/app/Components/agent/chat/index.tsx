@@ -4,12 +4,12 @@ import { useChat } from "@ai-sdk/react";
 import { DefaultChatTransport } from "ai";
 import { useState } from "react";
 
-export default function Chat() {
+export default function Page() {
   const [input, setInput] = useState("");
 
   const { messages, sendMessage } = useChat({
     transport: new DefaultChatTransport({
-      api: "/api/chat",
+      api: "/api/agent",
     }),
   });
 

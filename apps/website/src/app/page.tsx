@@ -5,7 +5,7 @@ import { ExperienceType, HomepageType } from "@/lib/sanity/types";
 import Experience from "./Components/Experience/Experience";
 import { Intro } from "./Components/Intro/Intro";
 import PageSection from "./Components/layout/pageSection";
-import Chat from "./Components/Agent/Chat";
+import Chat from "./Components/AI/Agent";
 
 const POSTS_QUERY = `*[
   _type == "homepage"

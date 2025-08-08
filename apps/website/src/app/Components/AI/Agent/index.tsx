@@ -3,11 +3,11 @@
 import { useChat } from "@ai-sdk/react";
 import { DefaultChatTransport } from "ai";
 import { useState } from "react";
-import styles from "./chat.module.scss";
+import styles from "./agent.module.scss";
 import ChatInput from "./ChatInput";
 import Message from "./Message";
 
-export default function Chat() {
+export default function Agent() {
   const [input, setInput] = useState("");
 
   const { messages, sendMessage } = useChat({

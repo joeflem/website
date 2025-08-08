@@ -1,6 +1,6 @@
 import Link from "next/link";
-import ModeSwitcher from "@/app/components/ModeSwitcher/ModeSwitcher";
-import ProfilePic from "@/app/components/ProfilePic/ProfilePic";
+import ModeSwitcher from "@/app/Components/ModeSwitcher/ModeSwitcher";
+import ProfilePic from "@/app/Components/ProfilePic/ProfilePic";
 import styles from "./Header.module.css";
 
 const Header = () => {

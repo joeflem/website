@@ -1,11 +1,11 @@
 import { PortableText } from "next-sanity";
-import { GradientWelcome } from "./components/GradientWelcome/GradientWelcome";
+import { GradientWelcome } from "./Components/GradientWelcome/GradientWelcome";
 import { client } from "@/lib/sanity/client";
 import { ExperienceType, HomepageType } from "@/lib/sanity/types";
-import Experience from "./components/Experience/Experience";
-import { Intro } from "./components/Intro/Intro";
-import PageSection from "./components/layout/pageSection";
-import Chat from "./components/Agent/Chat";
+import Experience from "./Components/Experience/Experience";
+import { Intro } from "./Components/Intro/Intro";
+import PageSection from "./Components/layout/pageSection";
+import Chat from "./Components/Agent/Chat";
 
 const POSTS_QUERY = `*[
   _type == "homepage"

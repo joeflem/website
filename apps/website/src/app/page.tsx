@@ -38,7 +38,7 @@ export default async function Page() {
   const agentIntro = {
     title: "Learn about Me",
     description:
-      "Got any questions about my background, companies I’ve worked for, or tech terms I use? Ask away! I’m here to help.",
+      "Got any questions about my background, companies I’ve worked for, or tech I use? Ask away! I’m here to help.",
   };
   return (
     <main>

@@ -1,14 +1,53 @@
 import { convertToModelMessages, streamText, type UIMessage } from "ai";
+import { client } from "@/lib/sanity/client";
 import "dotenv/config";
+import { AgentContextType } from "@/lib/sanity/types";
+import z from "zod";
+import { Resend } from "resend";
+import { EmailTemplate } from "@/app/Components/Email/default";
+
+// Allow streaming responses up to 30 seconds
+export const maxDuration = 30;
 
 export async function POST(req: Request) {
   const { messages }: { messages: UIMessage[] } = await req.json();
 
+  const AGENT_CONTEXT_QUERY = `*[
+  _type == "agentContext"
+]|order(publishedAt desc)[0]{_id, description}`;
+  const agentContext = await client.fetch<AgentContextType>(
+    AGENT_CONTEXT_QUERY
+  );
   const result = streamText({
     model: "openai/gpt-5-mini",
-    system:
-      "You are a helpful assistant for my website, Joe Fleming (joefleming.co.uk). It is your sole purpose to answer questions and provide information about me, and that is it. Don't regurgitate what you know about me, summarise it in your own words. Never offer to do additional tasks for users, i.e if they ask you to write a document, make an email etc. You are not their PA, you are mine, here to answer questions about me. Only answer the question asked, don't go above and beyond, just keep it short and sweet. Summarise information about me instead of just repeating it. Give high level overviews unless prompted further. Politely decline any requests that you either don't have the information on, or are negative towards me, or could make me look bad. This website is built with Next.js, TypeScript. It uses no CSS libraries, all the stylng is home grown. It's hosted on Vercel. The backend data comes from Sanity. Some info about me: Hello, I’m Joe. I’m a frontend engineer with close to a decade in the industry, starting out building and designing WordPress sites before moving into modern JavaScript frameworks. Since then, my work has focused heavily on React, Next.js, Vue, and TypeScript, building everything from small marketing pages to complex, scalable web applications. Over the years I’ve taken on roles including Web Developer, Frontend Engineer, Tech Lead, and Head of Engineering. These roles have expanded my focus beyond code, into leading teams, working closely with product, and thinking deeply about engineering performance, developer experience, and creating environments where people can do their best work. I have shipped projects on platforms like Vercel, AWS Amplify, and DigitalOcean, with a growing familiarity in the broader AWS ecosystem. I enjoy solving interesting problems, cutting through complexity, and communicating clearly — whether through code, documentation, or direct conversations. My belief is that while frameworks and tools change, the mindset and approach to building great products remain constant. You can find me on LinkedIn and GitHub. Experience: Huler — Head of Engineering (Jan 2025 – Present) Responsible for the entire tech stack including frontend, backend, and QA. Focus on scaling the team, improving alignment between engineering and product, introducing clearer ownership models, increasing delivery predictability, and managing cost pressures and shifting business priorities. Huler — Tech Lead (Frontend) (May 2023 – Jan 2025) Ensured the frontend team’s effectiveness and productivity, modernised tooling, championed frontend standards, streamlined CI/CD, improved code quality, and reduced friction in daily development while supporting engineers’ growth. Huler — Front End Lead (Nov 2019 – May 2023) Led the frontend team across bespoke and SaaS products, ensuring consistent and high-quality user experiences across internal systems and customer-facing platforms. Harrison Carloss — Web Developer (Mar 2019 – Mar 2020) First engineer post-rebrand. Helped define the technical toolkit, built internal tools using Laravel and Vue.js, and delivered customer websites and systems using various technologies and platforms. HealthCare21 — Web Developer (Nov 2018 – Mar 2019) Designed and built landing pages and event websites in WordPress. Learned React to maintain existing customer projects. SO Marketing — Web Developer (May 2016 – Nov 2018) Promoted from apprentice to web developer, delivering landing pages, websites, and e-commerce stores using WordPress and WooCommerce. SO Marketing — Apprentice (Jun 2015 – May 2016) Worked on smaller static HTML/CSS projects and bespoke WordPress websites for a range of customers. Colour & Code — Designer / Developer (Aug 2013 – Jan 2018) Founded my own digital services agency while in high school. Designed logos and websites, built WordPress and static HTML/CSS sites for local companies.",
+    system: agentContext.description.toString(),
     messages: convertToModelMessages(messages),
+    tools: {
+      askForMessage: {
+        description:
+          "The user can ask to speak to me, send me a message or an email, ask the user what they want to send to me",
+        inputSchema: z.object({
+          message: z
+            .string()
+            .describe("The message / email the user wants to send to me"),
+        }),
+      },
+      sendEnquiry: {
+        description:
+          "send the message the user has provided via email to my email address",
+        inputSchema: z.object({ message: z.string() }),
+        execute: async ({ message }: { message: string }) => {
+          const resend = new Resend(process.env.RESEND_API_KEY);
+          await resend.emails.send({
+            from: "noreply@joefleming.co.uk",
+            to: "joe@joefleming.co.uk",
+            subject: "New Enquiry from Website",
+            react: EmailTemplate({ message }),
+          });
+          return "Message sent successfully!";
+        },
+      },
+    },
   });
 
   return result.toUIMessageStreamResponse();

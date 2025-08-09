@@ -7,6 +7,12 @@ export type HomepageType = {
   description: PortableTextBlock[];
 };
 
+export type AgentContextType = {
+  _key: string;
+  title: boolean;
+  description: string;
+};
+
 export type ExperienceItemType = {
   _key: string;
   logo: SanityImageSource;

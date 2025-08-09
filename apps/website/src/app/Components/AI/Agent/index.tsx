@@ -37,7 +37,7 @@ export default function Agent() {
                     case "input-available":
                       return <p key={callId}>Sending message...</p>;
                     case "output-available":
-                      return <p key={callId}>Message: {part.output}</p>;
+                      return <p key={callId}>Message: {String(part.output)}</p>;
                     case "output-error":
                       return (
                         <p key={callId}>

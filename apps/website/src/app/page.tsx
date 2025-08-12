@@ -1,3 +1,4 @@
+export const experimental_ppr = true;
 import { PortableText } from "next-sanity";
 import { GradientWelcome } from "./Components/GradientWelcome/GradientWelcome";
 import { client } from "@/lib/sanity/client";
@@ -6,6 +7,8 @@ import Experience from "./Components/Experience/Experience";
 import { Intro } from "./Components/Intro/Intro";
 import PageSection from "./Components/layout/pageSection";
 import Chat from "./Components/AI/Agent";
+import { Suspense } from "react";
+import { Loader } from "lucide-react";
 
 const POSTS_QUERY = `*[
   _type == "homepage"
@@ -26,9 +29,24 @@ const EXPERIENCE_QUERY = `*[_type == "experience"][0]{
 export const revalidate = 60; // Revalidate every 60 seconds
 export const runtime = "edge";
 
-export default async function Page() {
+async function IntroContent() {
   const pageData = await client.fetch<HomepageType>(POSTS_QUERY);
+  return (
+    <Intro>
+      <h1>
+        👋 <GradientWelcome>{pageData.title}</GradientWelcome>
+      </h1>
+      <PortableText value={pageData.description} />
+    </Intro>
+  );
+}
+
+async function ExperienceContent() {
   const experience = await client.fetch<ExperienceType>(EXPERIENCE_QUERY);
+  return <Experience experience={experience?.items} />;
+}
+
+export default async function Page() {
   const experienceIntro = {
     title: "Experience",
     description:
@@ -42,14 +60,13 @@ export default async function Page() {
   };
   return (
     <main>
-      <Intro>
-        <h1>
-          👋 <GradientWelcome>{pageData.title}</GradientWelcome>
-        </h1>
-        <PortableText value={pageData.description} />
-      </Intro>
+      <Suspense fallback={<Loader />}>
+        <IntroContent />
+      </Suspense>
       <PageSection intro={experienceIntro}>
-        <Experience experience={experience?.items} />
+        <Suspense fallback={<Loader />}>
+          <ExperienceContent />
+        </Suspense>
       </PageSection>
       <PageSection intro={agentIntro}>
         <Chat />

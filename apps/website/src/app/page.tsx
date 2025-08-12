@@ -8,7 +8,7 @@ import { Intro } from "./Components/Intro/Intro";
 import PageSection from "./Components/layout/pageSection";
 import Chat from "./Components/AI/Agent";
 import { Suspense } from "react";
-import { Loader } from "lucide-react";
+import Loader from "./Components/Loader/Loader";
 
 const POSTS_QUERY = `*[
   _type == "homepage"
@@ -31,6 +31,7 @@ export const runtime = "edge";
 
 async function IntroContent() {
   const pageData = await client.fetch<HomepageType>(POSTS_QUERY);
+  // wait 2 seconds
   return (
     <Intro>
       <h1>

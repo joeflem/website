@@ -4,7 +4,7 @@ import "dotenv/config";
 import { AgentContextType } from "@/lib/sanity/types";
 import z from "zod";
 import { Resend } from "resend";
-import { EmailTemplate } from "@/app/Components/Email/default";
+import { EmailTemplate } from "@/app/components/Email/default";
 
 // Allow streaming responses up to 30 seconds
 export const maxDuration = 30;

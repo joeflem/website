@@ -1,14 +1,14 @@
 export const experimental_ppr = true;
 import { PortableText } from "next-sanity";
-import { GradientWelcome } from "./Components/GradientWelcome/GradientWelcome";
+import { GradientWelcome } from "./components/GradientWelcome/GradientWelcome";
 import { client } from "@/lib/sanity/client";
 import { ExperienceType, HomepageType } from "@/lib/sanity/types";
-import Experience from "./Components/Experience/Experience";
-import { Intro } from "./Components/Intro/Intro";
-import PageSection from "./Components/layout/pageSection";
-import Chat from "./Components/AI/Agent";
+import Experience from "./components/Experience/Experience";
+import { Intro } from "./components/Intro/Intro";
+import PageSection from "./components/layout/pageSection";
+import Chat from "./components/AI/Agent";
 import { Suspense } from "react";
-import Loader from "./Components/Loader/Loader";
+import Loader from "./components/Loader/Loader";
 
 const POSTS_QUERY = `*[
   _type == "homepage"

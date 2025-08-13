@@ -1,0 +1,41 @@
+.section {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "Overview Items Items"
+    "Overview Items Items"
+    "Overview Items Items";
+  border-top: var(--border);
+}
+@media (max-width: 1080px) {
+  .section {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "Overview"
+      "Items";
+  }
+}
+.overview {
+  grid-area: Overview;
+  border-bottom: var(--border);
+  padding: 30px;
+  @media (min-width: 1080px) {
+    border-right: var(--border);
+    border-bottom: none;
+    padding: 50px;
+  }
+  .overviewText {
+    position: relative;
+    @media (min-width: 1080px) {
+      position: sticky;
+      top: 50px;
+    }
+  }
+}
+
+.content {
+  grid-area: Items;
+}

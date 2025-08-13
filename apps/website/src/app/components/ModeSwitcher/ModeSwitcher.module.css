@@ -1,0 +1,16 @@
+.button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  opacity: 0.75;
+  transition: 0.25s ease;
+  position: relative;
+  transform: scale(1);
+}
+.button:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+.button:active {
+  transform: scale(0.9);
+}

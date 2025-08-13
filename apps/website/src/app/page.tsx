@@ -9,22 +9,7 @@ import PageSection from "./components/layout/pageSection";
 import Chat from "./components/AI/Agent";
 import { Suspense } from "react";
 import Loader from "./components/Loader/Loader";
-
-const POSTS_QUERY = `*[
-  _type == "homepage"
-]|order(publishedAt desc)[0]{_id, title, description}`;
-
-const EXPERIENCE_QUERY = `*[_type == "experience"][0]{
-  "items": items[] | order(from desc){
-    _key,
-    logo,
-    company,
-    jobTitle,
-    description,
-    from,
-    to
-  }
-}`;
+import { EXPERIENCE_QUERY, POSTS_QUERY } from "@/lib/sanity/queries";
 
 export const revalidate = 60; // Revalidate every 60 seconds
 export const runtime = "edge";

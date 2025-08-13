@@ -5,6 +5,7 @@ import { AgentContextType } from "@/lib/sanity/types";
 import z from "zod";
 import { Resend } from "resend";
 import { EmailTemplate } from "@/app/components/Email/default";
+import { AGENT_CONTEXT_QUERY } from "@/lib/sanity/queries";
 
 // Allow streaming responses up to 30 seconds
 export const maxDuration = 30;
@@ -12,9 +13,6 @@ export const maxDuration = 30;
 export async function POST(req: Request) {
   const { messages }: { messages: UIMessage[] } = await req.json();
 
-  const AGENT_CONTEXT_QUERY = `*[
-  _type == "agentContext"
-]|order(publishedAt desc)[0]{_id, description}`;
   const agentContext = await client.fetch<AgentContextType>(
     AGENT_CONTEXT_QUERY
   );
@@ -39,8 +37,8 @@ export async function POST(req: Request) {
         execute: async ({ message }: { message: string }) => {
           const resend = new Resend(process.env.RESEND_API_KEY);
           await resend.emails.send({
-            from: "noreply@joefleming.co.uk",
-            to: "joe@joefleming.co.uk",
+            from: process.env.FROM_EMAIL || "",
+            to: process.env.TO_EMAIL || "",
             subject: "New Enquiry from Website",
             react: EmailTemplate({ message }),
           });

@@ -9,7 +9,6 @@ import Message from "./Message";
 
 export default function Agent() {
   const [input, setInput] = useState("");
-  const [contactMessage, setContactMessage] = useState("");
 
   const { messages, sendMessage, addToolResult } = useChat({
     transport: new DefaultChatTransport({

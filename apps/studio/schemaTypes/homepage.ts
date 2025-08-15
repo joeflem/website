@@ -18,5 +18,19 @@ export default defineType({
       of: [{type: 'block'}], // WYSIWYG
       validation: (Rule) => Rule.required(),
     },
+    {
+      name: 'experienceIntro',
+      title: 'Experience Section Intro',
+      type: 'array',
+      of: [{type: 'block'}], // WYSIWYG
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      name: 'agentIntro',
+      title: 'Agent Section Intro',
+      type: 'array',
+      of: [{type: 'block'}], // WYSIWYG
+      validation: (Rule) => Rule.required(),
+    },
   ],
 })

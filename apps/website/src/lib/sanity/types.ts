@@ -5,6 +5,8 @@ export type HomepageType = {
   _key: string;
   title: boolean;
   description: PortableTextBlock[];
+  experienceIntro: PortableTextBlock[];
+  agentIntro: PortableTextBlock[];
 };
 
 export type AgentContextType = {

@@ -16,7 +16,6 @@ export const runtime = "edge";
 
 async function IntroContent() {
   const pageData = await client.fetch<HomepageType>(POSTS_QUERY);
-  // wait 2 seconds
   return (
     <Intro>
       <h1>
@@ -27,34 +26,35 @@ async function IntroContent() {
   );
 }
 
+async function ExperienceIntro(): Promise<React.ReactElement> {
+  const pageData = await client.fetch<HomepageType>(POSTS_QUERY);
+  console.log("Experience Intro Data:", pageData);
+  return <PortableText value={pageData.experienceIntro} />;
+}
+
+async function AgentIntro(): Promise<React.ReactElement> {
+  const pageData = await client.fetch<HomepageType>(POSTS_QUERY);
+  return <PortableText value={pageData.agentIntro} />;
+}
+
 async function ExperienceContent() {
   const experience = await client.fetch<ExperienceType>(EXPERIENCE_QUERY);
   return <Experience experience={experience?.items} />;
 }
 
 export default async function Page() {
-  const experienceIntro = {
-    title: "Experience",
-    description:
-      "I’ve had the pleasure of working with some great teams at fantastic companies. Along the way, I’ve learned a lot—especially from the things that didn’t go to plan. Those lessons have shaped how I work today.",
-  };
-
-  const agentIntro = {
-    title: "Learn about Me",
-    description:
-      "Got any questions about my background, companies I’ve worked for, or tech I use? Ask away! I’m here to help.",
-  };
   return (
     <main>
       <Suspense fallback={<Loader />}>
         <IntroContent />
       </Suspense>
-      <PageSection intro={experienceIntro}>
+      <PageSection intro={<ExperienceIntro />}>
+        <ExperienceIntro />
         <Suspense fallback={<Loader />}>
           <ExperienceContent />
         </Suspense>
       </PageSection>
-      <PageSection intro={agentIntro}>
+      <PageSection intro={<AgentIntro />}>
         <Chat />
       </PageSection>
     </main>

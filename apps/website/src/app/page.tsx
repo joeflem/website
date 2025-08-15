@@ -28,7 +28,6 @@ async function IntroContent() {
 
 async function ExperienceIntro(): Promise<React.ReactElement> {
   const pageData = await client.fetch<HomepageType>(POSTS_QUERY);
-  console.log("Experience Intro Data:", pageData);
   return <PortableText value={pageData.experienceIntro} />;
 }
 

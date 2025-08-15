@@ -1,6 +1,6 @@
 export const POSTS_QUERY = `*[
   _type == "homepage"
-]|order(publishedAt desc)[0]{_id, title, description}`;
+]|order(publishedAt desc)[0]{_id, title, description, experienceIntro, agentIntro}`;
 
 export const EXPERIENCE_QUERY = `*[_type == "experience"][0]{
   "items": items[] | order(from desc){

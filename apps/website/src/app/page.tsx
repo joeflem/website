@@ -48,7 +48,6 @@ export default async function Page() {
         <IntroContent />
       </Suspense>
       <PageSection intro={<ExperienceIntro />}>
-        <ExperienceIntro />
         <Suspense fallback={<Loader />}>
           <ExperienceContent />
         </Suspense>

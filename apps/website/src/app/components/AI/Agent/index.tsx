@@ -1,5 +1,4 @@
 "use client";
-
 import { useChat } from "@ai-sdk/react";
 import { DefaultChatTransport } from "ai";
 import { useState } from "react";
@@ -8,9 +7,7 @@ import ChatInput from "./ChatInput";
 import Message from "./Message";
 
 export default function Agent() {
-  const [input, setInput] = useState("");
-
-  const { messages, sendMessage, addToolResult } = useChat({
+  const { messages, sendMessage } = useChat({
     transport: new DefaultChatTransport({
       api: "/api/agent",
     }),
@@ -52,7 +49,7 @@ export default function Agent() {
         ))}
       </div>
 
-      <ChatInput input={input} setInput={setInput} sendMessage={sendMessage} />
+      <ChatInput sendMessage={sendMessage} />
     </div>
   );
 }

@@ -3,10 +3,9 @@ import { Send } from "lucide-react";
 import { track } from "@vercel/analytics";
 import styles from "./ChatInput.module.scss";
 import { ChatRequestOptions, UIDataTypes, UIMessage, UITools } from "ai";
+import { useState } from "react";
 
 interface ChatInputProps {
-  input: string;
-  setInput: (value: string) => void;
   sendMessage: (
     message?:
       | (Omit<UIMessage<unknown, UIDataTypes, UITools>, "id" | "role"> & {
@@ -19,11 +18,8 @@ interface ChatInputProps {
   ) => Promise<any>;
 }
 
-export default function ChatInput({
-  input,
-  setInput,
-  sendMessage,
-}: ChatInputProps) {
+export default function ChatInput({ sendMessage }: ChatInputProps) {
+  const [input, setInput] = useState("");
   return (
     <div className={styles.chatFooter}>
       <input

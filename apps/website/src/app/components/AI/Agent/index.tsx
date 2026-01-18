@@ -18,19 +18,18 @@ export default function Agent() {
   });
 
   useEffect(() => {
-    const storedMessages = window.localStorage.getItem(STORAGE_KEY);
-    if (!storedMessages) {
-      setHasLoadedMessages(true);
-      return;
-    }
-
     try {
+      const storedMessages = window.localStorage.getItem(STORAGE_KEY);
+      if (!storedMessages) {
+        return;
+      }
+
       const parsed = JSON.parse(storedMessages) as UIMessage[];
       if (Array.isArray(parsed) && parsed.length > 0) {
         setMessages(parsed);
       }
     } catch (error) {
-      console.warn("Failed to parse stored chat messages.", error);
+      console.warn("Failed to load stored chat messages.", error);
     } finally {
       setHasLoadedMessages(true);
     }

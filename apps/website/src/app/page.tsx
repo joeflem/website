@@ -1,4 +1,3 @@
-export const experimental_ppr = true;
 import { PortableText } from "next-sanity";
 import { GradientWelcome } from "./components/GradientWelcome/GradientWelcome";
 import { client } from "@/lib/sanity/client";
@@ -10,9 +9,6 @@ import Chat from "./components/AI/Agent";
 import { Suspense } from "react";
 import Loader from "./components/Loader/Loader";
 import { EXPERIENCE_QUERY, POSTS_QUERY } from "@/lib/sanity/queries";
-
-export const revalidate = 60; // Revalidate every 60 seconds
-export const runtime = "edge";
 
 async function IntroContent() {
   const pageData = await client.fetch<HomepageType>(POSTS_QUERY);

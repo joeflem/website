@@ -11,9 +11,7 @@ const nextConfig = {
       },
     ],
   },
-  experimental: {
-    ppr: "incremental",
-  },
+  cacheComponents: true,
 };
 
 module.exports = nextConfig;

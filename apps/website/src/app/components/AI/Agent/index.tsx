@@ -1,17 +1,55 @@
 "use client";
 import { useChat } from "@ai-sdk/react";
 import { DefaultChatTransport } from "ai";
-import { useState } from "react";
+import type { UIMessage } from "ai";
+import { useEffect, useState } from "react";
 import styles from "./agent.module.scss";
 import ChatInput from "./ChatInput";
 import Message from "./Message";
 
+const STORAGE_KEY = "ai-agent.messages.v1";
+
 export default function Agent() {
-  const { messages, sendMessage } = useChat({
+  const [hasLoadedMessages, setHasLoadedMessages] = useState(false);
+  const { messages, sendMessage, setMessages } = useChat({
     transport: new DefaultChatTransport({
       api: "/api/agent",
     }),
   });
+
+  useEffect(() => {
+    const storedMessages = window.localStorage.getItem(STORAGE_KEY);
+    if (!storedMessages) {
+      setHasLoadedMessages(true);
+      return;
+    }
+
+    try {
+      const parsed = JSON.parse(storedMessages) as UIMessage[];
+      if (Array.isArray(parsed) && parsed.length > 0) {
+        setMessages(parsed);
+      }
+    } catch (error) {
+      console.warn("Failed to parse stored chat messages.", error);
+    } finally {
+      setHasLoadedMessages(true);
+    }
+  }, [setMessages]);
+
+  useEffect(() => {
+    if (!hasLoadedMessages) return;
+
+    if (messages.length === 0) {
+      window.localStorage.removeItem(STORAGE_KEY);
+      return;
+    }
+
+    try {
+      window.localStorage.setItem(STORAGE_KEY, JSON.stringify(messages));
+    } catch (error) {
+      console.warn("Failed to persist chat messages.", error);
+    }
+  }, [hasLoadedMessages, messages]);
 
   return (
     <div className={styles.chatContainer}>
